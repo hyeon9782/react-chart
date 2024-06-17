@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const { pathname } = useLocation();
-  const [title, setTitle] = useState("");
 
   const createTitle = (pathname: string) => {
     let title = "";
@@ -16,15 +15,13 @@ const Header = () => {
         break;
     }
 
-    setTitle(title);
+    return title;
   };
 
-  useEffect(() => {
-    createTitle(pathname);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <header>
-      <div>{title}</div>
+      <div>{createTitle(pathname)}</div>
       <div></div>
     </header>
   );

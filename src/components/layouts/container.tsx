@@ -1,5 +1,7 @@
-const Container = () => {
-  return <div>Container</div>;
+import { PropsWithChildren } from "react";
+
+const Container = ({ children }: PropsWithChildren) => {
+  return <div>{children}</div>;
 };
 
 export default Container;
